@@ -12,17 +12,7 @@ class App extends Component {
         { id: 4, value: 3}
     ]
 }
-    constructor(){
-      super();
-      console.log('App - Constructor');
-    }
-
-    componentDidMount() {
-      console.log('App - Mounted');
-      // Ajax Call
-    }
-
-
+ 
 handleReset = () => {
     
     const counters = this.state.counters.map(c => {
@@ -45,8 +35,16 @@ handleIncremnt = counter => {
     counters[index].value++;
     this.setState({ counters });
 }
+
+handleDecrement = counter => {
+  const counters = [...this.state.counters];
+  const index = counters.indexOf(counter);
+  counters[index] = { ...counter };
+  counters[index].value--;
+  this.setState({ counters });
+}
   render(){
-    console.log('App - Rendered');
+
   return (
     <React.Fragment>
       <NavBar 
@@ -57,6 +55,7 @@ handleIncremnt = counter => {
           onReset={this.handleReset}
           onDelete={this.handleDelete}
           onIncrement={this.handleIncremnt}
+          onDecrement={this.handleDecrement}
           counters={this.state.counters}
         />
       </main>
