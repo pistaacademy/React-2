@@ -1,12 +1,16 @@
+import React, { Component } from 'react';
 import './App.css';
-import Counter from './components/counter';
 
-function App() {
-  return (
-    <div>
-      <Counter />
-    </div>
-  );
+import Movies from './components/movies';
+
+class App extends Component {
+  render() {
+    return (
+      <div className="container">
+        <Movies />
+      </div>
+    );
+  }
 }
 
 export default App;
