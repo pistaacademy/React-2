@@ -12,6 +12,16 @@ class App extends Component {
         { id: 4, value: 3}
     ]
 }
+    constructor(){
+      super();
+      console.log('App - Constructor');
+    }
+
+    componentDidMount() {
+      console.log('App - Mounted');
+      // Ajax Call
+    }
+
 
 handleReset = () => {
     
@@ -36,6 +46,7 @@ handleIncremnt = counter => {
     this.setState({ counters });
 }
   render(){
+    console.log('App - Rendered');
   return (
     <React.Fragment>
       <NavBar 
